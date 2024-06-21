@@ -1,0 +1,46 @@
+.fs-9{
+    font-size: .9rem;
+}
+.fs-8{
+    font-size: .8rem;
+}
+.fs-7{
+    font-size: .7rem;
+}
+.ls-2{
+    letter-spacing: .2em;
+}
+.it{
+    display: block;
+    transform: skewX(-20deg);
+    color: black;
+    font-weight: 300;
+}
+.transparent{
+    background-color: transparent !important;
+    border-color:transparent !important;
+}
+.no-text-decoration{
+    text-decoration: none;
+}
+.accordion-button{
+    background: white !important;
+    background-color: white !important;
+}
+.accordion-button:hover, .accordion-button:focus, .accordion-button:active{
+    background: none !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+    -webkit-tap-highlight-color: transparent;
+}
+body{
+    font-family: "Roboto", sans-serif;
+}
+.none-ul {
+    list-style-type: none !important;
+    padding: 0 !important; 
+    margin: 0 !important; 
+}
+/* .toast:not(.show) {
+    display: block;
+} */

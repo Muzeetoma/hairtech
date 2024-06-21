@@ -1,0 +1,23 @@
+export const HairColor = new Map([
+    ['#000000', 'BLACK'],
+    ['#7f4f24', 'BROWN'],
+    ['#ffff66', 'BLONDE'],
+    ['#ef233c', 'RED'],
+    ['#c0c0c0', 'GRAY_SILVER'],
+    ['#ffffff', 'WHITE'],
+    ['#a52a2a', 'AUBURN'],
+    ['#cd5c5c', 'CHESTNUT'],
+    ['#ffcc99', 'STRAWBERRY_BLONDE'],
+    ['#e5e4e2', 'PLATINUM_BLONDE'],
+    ['#3e2723', 'DARK_BROWN'],
+    ['#8b4513', 'LIGHT_BROWN'],
+    ['#b8860b', 'DARKER_BLONDE'],
+    ['#f4a460', 'SANDY_BLONDE'],
+    ['#c04000', 'MAHOGANY'],
+    ['#800020', 'BURGUNDY'],
+    ['#ffd700', 'CARAMEL'],
+    ['#ffb300', 'HONEY'],
+    ['#b2beb5', 'ASH_BLONDE'],
+    ['#987654', 'ASH_BROWN'],
+    ['#00ffff', 'BLUE']
+]);
