@@ -41,6 +41,6 @@ body{
     padding: 0 !important; 
     margin: 0 !important; 
 }
-/* .toast:not(.show) {
-    display: block;
-} */
+.form-check-input:checked {
+    background-color: #000000 ;
+}

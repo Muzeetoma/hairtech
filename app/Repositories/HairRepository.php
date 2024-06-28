@@ -13,7 +13,9 @@ class HairRepository{
     public function getByid($id){
         return Hair::where('id',$id)->first();
     }
-    public function groupHairProductsByType(){
+    public function groupHairProductsByType(?array $type=[],
+                                            ?array $color=[],
+                                            ?array $length=[]){
         $hairs = Hair::selectRaw('
                 type,
                 length,
@@ -47,11 +49,22 @@ class HairRepository{
                         "discount", discount
                     )
                 )) AS discounts
-            ')
-            ->groupBy('type')
-            ->groupBy('length')
-            ->get();
+            ');
         
-    return $hairs;
+        if(!empty($type) && count($type) !== 0){
+            $hairs->whereIn('type',$type);
+        }
+        if(!empty($color) && count($color) !== 0){
+            $hairs->whereIn('color',$color);
+        }  
+        if(!empty($length) && count($length) !== 0){
+            $hairs->whereIn('length',$length);
+        } 
+
+        $results = $hairs->groupBy('type')
+                         ->groupBy('length')
+                         ->get();
+        
+    return $results;
     }
 }

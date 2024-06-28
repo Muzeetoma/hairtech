@@ -34,8 +34,11 @@ class HairService{
             session()->flash('error','Something went wrong: ' . $ex->getMessage()); 
         }
     }
-    public function groupHairByTypes(){
-        return $this->hairRepository->groupHairProductsByType();
+    public function groupHairByTypes(?array $type=[],
+                                     ?array $color=[],
+                                     ?array $length=[])
+    {
+        return $this->hairRepository->groupHairProductsByType($type,$color,$length);
     }
     public function getHairsByType($hairType){
         $hairGroups = $this->hairRepository->getHairProductsByType($hairType);

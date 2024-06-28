@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Services;
-use App\Dto\AddHairDto;
+
 use App\Dto\AddHairItemDto;
 use App\Mapper\HairItemMapper;
 use App\Models\Enums\CartItem;
 use App\Models\Enums\HairItemType;
-use App\Models\HairItem;
 use App\Repositories\HairItemRepository;
 use App\Services\FileUploadService;
 use App\Utils\PriceUtils;

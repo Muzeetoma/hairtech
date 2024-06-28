@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GetProductsRequest;
+use App\Models\Hair;
 use App\Services\HairItemService;
 use App\Services\HairService;
+use App\Utils\RequestUtils;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller{
 
@@ -22,10 +25,23 @@ class ProductController extends Controller{
        return $this->hairService->getHairProductsIn($req->ids);
     }
 
-    public function products(){
-        $hairProducts = $this->hairService->groupHairByTypes();
+    public function products(Request $request){
+        $typesSearchParams = RequestUtils::getArrayOfValuesFromUrl($request,'type');
+        $colorsSearchParams = RequestUtils::getArrayOfColorValuesFromUrl($request,'color');
+        $lengthsSearchParams = RequestUtils::getArrayOfValuesFromUrl($request,'length');
+
+        $hairProducts = $this->hairService->groupHairByTypes(
+            $typesSearchParams,
+            $colorsSearchParams,
+            $lengthsSearchParams
+        );
+        $hairTypes = Hair::hairTypes();
+        $hairColors = Hair::hairColors();
+
         return Inertia::render('Products',[
             'hairProducts' => $hairProducts,
+            'hairTypes' => $hairTypes,
+            'hairColors' => $hairColors,
         ]);
     }
 
